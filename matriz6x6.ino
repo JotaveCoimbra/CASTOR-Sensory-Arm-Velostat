@@ -1,5 +1,5 @@
 int linhas[6]  = {25,26,27,14,12,13};          // OUTPUT
-int colunas[6] = {32,33,34,35,36,39};         // ADC
+int colunas[6] = {33,32,35,34,39,36};         // ADC
 
 void setup() {
   Serial.begin(115200);
