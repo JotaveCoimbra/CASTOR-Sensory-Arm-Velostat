@@ -40,8 +40,6 @@ void setup() {
 
   for (int i = 0; i < 6; i++)
     pinMode(linhas[i], INPUT);
-
-  delay(1000);   // deixa roupa/espuma estabilizar
   calibrarBaseline();
 }
 
@@ -77,7 +75,6 @@ void loop() {
     delayMicroseconds(300);
   }
 
-  // =================== IMPRESSÃO NO SEU FORMATO ===================
   Serial.println("----- MATRIZ -----");
   for (int l = 0; l < 6; l++) {
     for (int c = 5; c >= 0; c--) {
