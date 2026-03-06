@@ -3,7 +3,7 @@
 // ==========================
 // Configurações de Threshold
 // ==========================
-const int THRESHOLD = 200; // Qualquer leitura abaixo de 100 será zerada
+const int THRESHOLD = 200; // Qualquer leitura abaixo de 200 será zerada
 
 // ==========================
 // Linhas separadas (12 pinos)
@@ -26,7 +26,7 @@ const int SIG2 = 35;   // Matriz 2 (ADC1 - Input Only)
 // Canais do 4067 usados nas 6 colunas
 int canais[6] = {0, 1, 2, 3, 4, 5};
 
-// Baselines para remover o peso "morto" da estrutura
+// Baselines da estrutura
 int baseline1[6][6];
 int baseline2[6][6];
 bool calibrado = false;
@@ -125,7 +125,7 @@ void loop() {
       int val1 = lerEstavel(SIG1);
       int val2 = lerEstavel(SIG2);
 
-      // Diferença em relação ao repouso
+      // Diferença em relação a baseline
       int d1 = val1 - baseline1[l][c];
       int d2 = val2 - baseline2[l][c];
 
@@ -133,7 +133,7 @@ void loop() {
       if (d1 < 0) d1 = 0;
       if (d2 < 0) d2 = 0;
 
-      // Aplicação do Threshold de 100 usando IF/ELSE
+      // Aplicação do Threshold de 200 
       if (d1 < THRESHOLD) {
         m1[l][c] = 0;
       } else {
@@ -155,7 +155,7 @@ void loop() {
   // Visualização no Serial Monitor
   Serial.println(">> MATRIZ 1 | MATRIZ 2 <<");
   for (int l = 0; l < 6; l++) {
-    // Exibe M1 (da direita para esquerda para alinhar visualmente)
+    // Exibe M1 
     for (int c = 5; c >= 0; c--) {
       Serial.print(m1[l][c]);
       Serial.print("\t");
