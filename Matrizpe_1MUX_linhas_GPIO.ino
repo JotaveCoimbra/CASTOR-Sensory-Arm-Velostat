@@ -186,7 +186,7 @@ void loop() {
   // 1 MUX nas colunas, linhas direto nos GPIOs
   // Intercalado por linha:
   // linha l da matriz 1 -> depois linha l da matriz 2
-  // ==========================
+  // ==========================//
   for (int l = 0; l < 6; l++) {
     // Matriz 1 - linha l
     ativarLinhaM1(l);
