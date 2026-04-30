@@ -5,7 +5,7 @@
 // ==========================
 const int THRESHOLD_M1 = 500;
 const int THRESHOLD_M2 = 400;
-const int THRESHOLD_PE = 500;
+const int THRESHOLD_PE = 400;
 
 // ==========================
 // Sensores dos pés
@@ -237,19 +237,21 @@ void loop() {
   (void)leftTouch;
   (void)rightTouch;
 
-  // ==========================
+    // ==========================
   // Serial Monitor
   // ==========================
-  Serial.println(">> MATRIZ 1 | MATRIZ 2 <<");
+  Serial.println(">> MATRIZ 1                         | MATRIZ 2 <<");
 
   for (int l = 0; l < 6; l++) {
+    // Matriz 1
     for (int c = 5; c >= 0; c--) {
       Serial.print(m1[l][c]);
       Serial.print("\t");
     }
 
-    Serial.print(" |   ");
+    Serial.print(" | ");
 
+    // Matriz 2
     for (int c = 0; c < 6; c++) {
       Serial.print(m2[l][c]);
       Serial.print("\t");
@@ -258,21 +260,19 @@ void loop() {
     Serial.println();
   }
 
-  Serial.println();
+  // Separador entre matrizes e pés
+  Serial.println("-------------------------");
 
   Serial.print("PE ESQUERDO: ");
-  Serial.print(deltaLeft);
-  Serial.print(" | ");
-  //Serial.print(leftTouch ? "TOCOU" : "NAO");
+  Serial.println(deltaLeft);
+  //Serial.println(leftTouch ? "TOCOU" : "NAO");
 
-  Serial.print("    ||    ");
-
-  Serial.print("PE DIREITO: ");
+  Serial.print("PE DIREITO:  ");
   Serial.print(deltaRight);
-  Serial.print(" | ");
+ 
   //Serial.println(rightTouch ? "TOCOU" : "NAO");
 
-  Serial.println("-------------------------------------------------");
+ 
 
   delay(50);
 }
