@@ -12,10 +12,10 @@ const int THRESHOLD2 = 400;  // Matriz 2
 // C0 a C5 -> linhas da matriz 1
 // C7 a C12 -> linhas da matriz 2
 // ==========================
-const int L_S0 = 16;
-const int L_S1 = 17;
-const int L_S2 = 18;
-const int L_S3 = 19;
+const int L_S0 = 18;
+const int L_S1 = 5;
+const int L_S2 = 17;
+const int L_S3 = 16;
 
 int canaisLinhaM1[6] = {0, 1, 2, 3, 4, 5};
 int canaisLinhaM2[6] = {7, 8, 9, 10, 11, 12};
@@ -26,10 +26,10 @@ int canaisLinhaM2[6] = {7, 8, 9, 10, 11, 12};
 // C0 a C5 -> colunas matriz 1
 // C7 a C12 -> colunas matriz 2
 // ==========================
-const int C_S0 = 32;
-const int C_S1 = 33;
-const int C_S2 = 14;
-const int C_S3 = 12;
+const int C_S0 = 26;
+const int C_S1 = 25;
+const int C_S2 = 33;
+const int C_S3 = 32;
 
 const int SIG_COL = 34; // ADC
 
